@@ -16,5 +16,9 @@ public class Main {
         appliances.sort((o1, o2) -> o1.getPower() - o2.getPower());
         System.out.println("\t\tsorting appliances by power use...");
         appliances.forEach(o -> System.out.println(o.toString()));
+        System.out.println("\t\tturning on some appliances...");
+        appliances.get(0).power_on();
+        appliances.get(2).power_on();
+        appliances.get(4).power_on();
     }
 }
