@@ -20,16 +20,16 @@ public class Main {
                 "Greenwich Publishing Ltd", 2020, 680, 40, "Paperback");
 
         for (Book book: books){
-            List<String> authorsList = new ArrayList<>(Arrays.asList(book.authors));
+            List<String> authorsList = new ArrayList<>(Arrays.asList(book.getAuthors()));
             if (authorsList.contains("Charles Petzold")){       // a) print books by a given author
                 System.out.println(book);
             }
 
-            if (book.publisher.equals("Addison Wesley")){       // b) print books published by a publishing house
+            if (book.getPublisher().equals("Addison Wesley")){       // b) print books published by a publishing house
                 System.out.println(book);
             }
 
-            if (book.year > 2019) {                             // c) print books released after a given year
+            if (book.getYear() > 2019) {                             // c) print books released after a given year
                 System.out.println(book);
             }
         }

@@ -1,10 +1,10 @@
-package Planes;
+package planes;
 
 import models.MilitaryType;
 
 import java.util.Objects;
 
-public class MilitaryPlane extends Planes.Plane{
+public class MilitaryPlane extends planes.Plane{
 
     private MilitaryType type;
 

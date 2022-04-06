@@ -13,9 +13,12 @@ public class SortedMatrix {
         fillMatrix(matrix);
         System.out.println("Generated matrix with random elements:");
         showMatrix(matrix);
-        int k = 1;
-        System.out.printf("Sorted matrix columns ordered by %d elements of row%n", k);
-        Arrays.sort(matrix, (row, column) -> row[k] - column[k]);
+        System.out.print("Enter the number of the column by which you want to sort the array k = ");
+        int k = scanner.nextInt()-1;
+        System.out.printf("Sorted matrix columns ordered by %d elements of row%n", k+1);
+        Arrays.sort(matrix, (x, y) -> {
+            return x[k] - y[k];
+        });
         showMatrix(matrix);
     }
 

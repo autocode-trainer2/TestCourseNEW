@@ -3,14 +3,14 @@ package com.epam.training.student_khasankhon_artikov.classes.main_task;
 import java.util.Arrays;
 
 public class Book {
-    int id;
-    String name;
-    String[] authors;
-    String publisher;
-    int year;
-    int pages;
-    int price;
-    String type;
+    private final int id;
+    private String name;
+    private String[] authors;
+    private String publisher;
+    private int year;
+    private int pages;
+    private int price;
+    private String type;
 
     public Book(int id, String name, String[] authors, String publisher, int year, int pages, int price, String type) {
         this.id = id;
@@ -35,13 +35,13 @@ public class Book {
         this.type = type;
     }
 
+    public String getPublisher() { return publisher; }
+
     public String getName() {
         return name;
     }
 
-    public String[] getAuthors() {
-        return authors;
-    }
+    public String[] getAuthors() { return authors; }
 
     public int getYear() {
         return year;
@@ -53,6 +53,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "<'" + name + "', " + Arrays.toString(authors) + ", " + year + ", " + publisher +".>";
+        return "<" + id +". '" + name + "', " + Arrays.toString(authors) + ", " + year + ", " + publisher +".>";
     }
 }
