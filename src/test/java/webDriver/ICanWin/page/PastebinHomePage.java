@@ -36,6 +36,7 @@ public class PastebinHomePage {
 
     public PastebinHomePage openPage(){
         driver.get(HOMEPAGE_URL);
+        driver.manage().window().maximize();
         return this;
     }
 

@@ -23,6 +23,7 @@ public class GoogleCloudHomePage {
 
     public GoogleCloudHomePage openPage(){
         driver.get(HOMEPAGE_URL);
+        driver.manage().window().maximize();
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOf(searchInput));
         return this;

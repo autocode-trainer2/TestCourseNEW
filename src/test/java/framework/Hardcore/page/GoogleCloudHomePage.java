@@ -1,5 +1,6 @@
 package framework.Hardcore.page;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,7 +30,8 @@ public class GoogleCloudHomePage {
     }
 
     public SearchPricingCalculatorPage searchForPricingCalculator(){
-        searchInput.sendKeys(  "Google Cloud Platform Pricing Calculator\n");
+        searchInput.sendKeys(  "Google Cloud Platform Pricing Calculator");
+        searchInput.sendKeys(Keys.ENTER);
         return new SearchPricingCalculatorPage(driver);
     }
 }

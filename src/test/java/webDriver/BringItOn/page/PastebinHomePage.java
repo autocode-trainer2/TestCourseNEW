@@ -41,6 +41,7 @@ public class PastebinHomePage {
 
     public PastebinHomePage openPage() {
         driver.get(HOMEPAGE_URL);
+        driver.manage().window().maximize();
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(CustomConditions.jQueryAJAXsCompleted());
         return this;

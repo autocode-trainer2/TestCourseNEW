@@ -67,6 +67,8 @@ public class PricingCalculatorPage {
         setSeries(virtualMachine.getSeries());
         setInstanceType(virtualMachine.getInstanceType());
         checkAddGPUs();
+        System.out.println("ADD GPU was checked========================================");
+        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOf(selectGPUType));
         setGPUType(virtualMachine.getGpuType());
         setGPUNumber(virtualMachine.getNumberOfGPUs());
         setLocaleSSD(virtualMachine.getLocalSSD());

@@ -25,7 +25,7 @@ public class GoogleCloudPlatformPricingCalculateTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:\\webdrivers\\yandexdriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         driver = new ChromeDriver();
     }
 
