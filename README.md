@@ -11,3 +11,4 @@ Dbrowser:  chrome | yandex | edge
 Denvironment: qa | dev
 
 Dsurefire.suiteXmlFiles: src/test/resources/testng-smoke.xml | testng-all.xml
+=======
