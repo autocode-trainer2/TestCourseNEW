@@ -45,7 +45,6 @@ public class PastebinHomePage {
     }
 
     public PastebinHomePage setExpiration(String expiration){
-
         executor.executeScript("arguments[0].click();", newPastExpiration);
         newPastExpiration.click();
         WebElement option = driver.findElement(By.xpath("//li[text()='" + expiration + "']"));

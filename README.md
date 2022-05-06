@@ -17,4 +17,5 @@ notes to "framework" task-> parameters to start mvn project: -Dbrowser={param1} 
 param1: chrome | firefox | edge | yandex
 param2: qa | dev
 
-example: mvn -Dbrowser=chrome -Denvironment=qa -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml clean test
+example: 
+mvn -Dbrowser=chrome -Denvironment=qa -Dsurefire.suiteXmlFiles=src/test/resources/testng-smoke.xml clean test

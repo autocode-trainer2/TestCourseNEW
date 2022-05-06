@@ -11,15 +11,15 @@ import org.testng.annotations.Test;
 public class WebDriverCreatePasteTest {
     private WebDriver driver;
 
-    @BeforeMethod (alwaysRun = true)
-    public void browserSetup(){
-        System.setProperty("webdriver.chrome.driver", "D:\\webdrivers\\yandexdriver.exe");
+    @BeforeMethod(alwaysRun = true)
+    public void browserSetup() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/yandexdriver");
         driver = new ChromeDriver();
     }
 
 
     @Test(description = "Creating New Paste")
-    public void CreatePasteTest(){
+    public void createPasteTest() {
         Boolean createPaste = new PastebinHomePage(driver)
                 .openPage()
                 .addPasteText("Hello from WebDriver")
@@ -32,7 +32,7 @@ public class WebDriverCreatePasteTest {
     }
 
     @AfterMethod(alwaysRun = true)
-    public void  browserTearDown(){
+    public void browserTearDown() {
         driver.quit();
         driver = null;
     }

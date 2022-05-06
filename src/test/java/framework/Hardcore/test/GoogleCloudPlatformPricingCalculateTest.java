@@ -10,35 +10,47 @@ import org.openqa.selenium.WindowType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class GoogleCloudPlatformPricingCalculateTest extends CommonConditions{
+public class GoogleCloudPlatformPricingCalculateTest extends CommonConditions {
+    private VirtualMachine testVirtualMachine;
+    private Email email;
+    private String calculatorTab;
+    private String yopmailTab;
 
-    @Test
-    public void GoogleCloudPlatformPricingCalculatorTest(){
-        VirtualMachine testVirtualMachine = VirtualMachineCreator.withCredentialsFromProperties();
-        String calculatorResult = new GoogleCloudHomePage(driver)
+    private String getCalculatorResult() {
+        return new GoogleCloudHomePage(driver)
                 .openPage()
                 .searchForPricingCalculator()
                 .goToPricingCalculator()
                 .fillVirtualMachineData(testVirtualMachine)
                 .estimate()
                 .getEstimateCostsFromCalculator();
+    }
 
-        String calculatorTab = driver.getWindowHandle();
-        driver.switchTo().newWindow(WindowType.TAB);
-        String yopmailTab = driver.getWindowHandle();
-
-        Email email = new Email(new YopmailHomePage(driver)
-                .openPage()
-                .generateTemporaryEmail());
-
-        String emailResult = new CalculateResultPage(driver.switchTo().window(calculatorTab))
+    private String getEmailResult() {
+        return new CalculateResultPage(driver.switchTo().window(calculatorTab))
                 .emailEstimateClick()
                 .enterEmailField(email.getEmail())
                 .sendEmailClick()
                 .checkInbox(driver.switchTo().window(yopmailTab))
                 .getEstimatedCostsFromEmail();
+    }
 
-     Assert.assertEquals(emailResult, calculatorResult, "FAIL: Total Cost results are different");
+    @Test(description = "Price comparison test")
+    public void pricingCalculate() {
+        testVirtualMachine = VirtualMachineCreator.withCredentialsFromProperties();
+        String calculatorResult = getCalculatorResult();
+
+        calculatorTab = driver.getWindowHandle();
+        driver.switchTo().newWindow(WindowType.TAB);
+        yopmailTab = driver.getWindowHandle();
+
+        email = new Email(new YopmailHomePage(driver)
+                .openPage()
+                .generateTemporaryEmail());
+
+        String emailResult = getEmailResult();
+
+        Assert.assertEquals(emailResult, calculatorResult, "Total Cost results are different");
 
     }
 

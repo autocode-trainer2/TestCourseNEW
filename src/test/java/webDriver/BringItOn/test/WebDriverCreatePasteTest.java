@@ -1,5 +1,6 @@
 package webDriver.BringItOn.test;
 
+import org.testng.asserts.SoftAssert;
 import webDriver.BringItOn.page.PasteViewPage;
 import webDriver.BringItOn.page.PastebinHomePage;
 import org.openqa.selenium.WebDriver;
@@ -11,19 +12,19 @@ import org.testng.annotations.Test;
 
 public class WebDriverCreatePasteTest {
     private WebDriver driver;
-    private String CODE_TEXT = "git config --global user.name  \"New Sheriff in Town\"\n" +
+    private final String CODE_TEXT = "git config --global user.name  \"New Sheriff in Town\"\n" +
                                "git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\n" +
                                "git push origin master --force";
     private String PASTE_NAME = "how to gain dominance among developers";
 
     @BeforeMethod(alwaysRun = true)
     public void browserSetup() {
-        System.setProperty("webdriver.chrome.driver", "D:\\webdrivers\\yandexdriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/yandexdriver");
         driver = new ChromeDriver();
     }
 
     @Test(description = "Creating New Paste")
-    public void CreatePasteTest() {
+    public void createPasteTest() {
         PasteViewPage paste = new PastebinHomePage(driver)
                 .openPage()
                 .addPasteText(CODE_TEXT)
@@ -31,10 +32,11 @@ public class WebDriverCreatePasteTest {
                 .setExpiration("10 Minutes")
                 .setPasteTitle(PASTE_NAME)
                 .submitNewPasteCreation();
-
-        Assert.assertTrue(paste.getPageTitle().contains(PASTE_NAME), "FAIL: Page title did not mismatch");
-        Assert.assertTrue(paste.getPasteText().contains(CODE_TEXT), "FAIL: Paste code did not mismatch");
-        Assert.assertTrue(paste.SyntaxHighlightStyle().contains("bash"), "FAIL: Paste syntax highlight is not light");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(paste.getPageTitle(), PASTE_NAME, "FAIL: Page title did not mismatch");
+        softAssert.assertEquals(paste.getPasteText(), CODE_TEXT, "FAIL: Paste code did not mismatch");
+        softAssert.assertEquals(paste.SyntaxHighlightStyle(),"bash", "FAIL: Paste syntax highlight is not light");
+        softAssert.assertAll();
     }
 
     @AfterMethod(alwaysRun = true)

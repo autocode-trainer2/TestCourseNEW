@@ -30,7 +30,6 @@ public class SearchPricingCalculatorPage {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(searchResult));
         searchResult.click();
-
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOf(webFrame));
         driver.switchTo().frame(webFrame);

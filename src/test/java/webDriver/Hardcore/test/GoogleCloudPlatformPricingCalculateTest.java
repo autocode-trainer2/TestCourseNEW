@@ -26,7 +26,7 @@ public class GoogleCloudPlatformPricingCalculateTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:\\webdrivers\\yandexdriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/yandexdriver");
         driver = new ChromeDriver();
     }
 
@@ -67,8 +67,6 @@ public class GoogleCloudPlatformPricingCalculateTest {
                 .checkInbox()
                 .getEstimatedCostsFromEmail();
         Assert.assertEquals(costFromEmail, costFromCalculator, "FAIL: Total Cost results are different");
-
-
     }
 
 

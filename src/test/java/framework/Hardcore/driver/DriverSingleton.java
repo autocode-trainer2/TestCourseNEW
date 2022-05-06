@@ -18,17 +18,19 @@ public class DriverSingleton {
                 case "firefox":{
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
+                    break;
                 } case "chrome":{
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
+                    break;
                 } case "edge":{
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
-                }
-
-                default: {
-                    System.setProperty("webdriver.chrome.driver", "d:\\webdrivers\\yandexdriver.exe");
+                    break;
+                } default: {
+                    System.setProperty("webdriver.chrome.driver", "src/test/resources/yandexdriver");
                     driver = new ChromeDriver();
+                    break;
                 }
             }
 

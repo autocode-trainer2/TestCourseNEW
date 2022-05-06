@@ -1,5 +1,6 @@
 package webDriver.HurtMePlenty.test;
 
+import org.testng.asserts.SoftAssert;
 import webDriver.HurtMePlenty.page.CalculateResultPage;
 import webDriver.HurtMePlenty.page.GoogleCloudHomePage;
 import org.openqa.selenium.WebDriver;
@@ -25,7 +26,7 @@ public class GoogleCloudPlatformPricingCalculateTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:\\webdrivers\\yandexdriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/yandexdriver");
         driver = new ChromeDriver();
     }
 
@@ -48,19 +49,19 @@ public class GoogleCloudPlatformPricingCalculateTest {
                     .setDatacenter(DATACENTER_LOCATION)
                     .setCommittedUsage(COMMITTED_USAGE)
                     .estimate();
-
-        Assert.assertTrue(resultsOfCalculate.getItem("Region").contains(DATACENTER_LOCATION),
-                "FAIL: Datacenter region");
-        Assert.assertTrue(resultsOfCalculate.getItem("Commitment term").contains(COMMITTED_USAGE),
-                "FAIL: Committed term");
-        Assert.assertTrue(resultsOfCalculate.getItem("VM class").contains(VM_CLASS.toLowerCase()),
-                "FAIL: VM class");
-        Assert.assertTrue(resultsOfCalculate.getItem("Instance type").contains(INSTANCE_TYPE),
-                "FAIL: Instance type");
-        Assert.assertTrue(resultsOfCalculate.getItem("Local SSD").contains(LOCAL_SSD),
-                "FAIL: Local SSD");
-        Assert.assertTrue(resultsOfCalculate.getItem("Total Estimated Cost").contains("1,082.77"),
-                "FAIL: Total Estimated Cost");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(resultsOfCalculate.getItem("Region"), DATACENTER_LOCATION,
+                "Datacenter region didn't mismatch");
+        softAssert.assertEquals(resultsOfCalculate.getItem("Commitment term"), COMMITTED_USAGE,
+                "Committed term didn't mismatch");
+        softAssert.assertEquals(resultsOfCalculate.getItem("VM class"), VM_CLASS.toLowerCase(),
+                "VM class didn't mismatch");
+        softAssert.assertEquals(resultsOfCalculate.getItem("Instance type"), INSTANCE_TYPE,
+                "Instance type didn't mismatch");
+        softAssert.assertEquals(resultsOfCalculate.getItem("Local SSD"), LOCAL_SSD,
+                "Local SSD didn't mismatch");
+        softAssert.assertEquals(resultsOfCalculate.getItem("Total Estimated Cost"), "1,082.77",
+                "Total Estimated Cost didn't mismatch");
 
     }
 

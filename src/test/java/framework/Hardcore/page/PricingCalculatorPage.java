@@ -16,7 +16,7 @@ import java.time.Duration;
 public class PricingCalculatorPage {
     private WebDriver driver;
 
-    @FindBy(id = "input_81")
+    @FindBy(xpath = "//*[@ng-model='listingCtrl.computeServer.quantity']")
     private WebElement inputNumberOfInstance;
 
     @FindBy(xpath = "//md-select[@ng-model='listingCtrl.computeServer.os']")
