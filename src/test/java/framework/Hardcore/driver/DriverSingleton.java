@@ -9,25 +9,37 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class DriverSingleton {
     private static WebDriver driver;
 
-    public DriverSingleton(){}
+    public DriverSingleton() {
+    }
 
-    public static WebDriver getDriver(){
-        if (driver==null){
+    public static WebDriver getDriver() {
+        if (driver == null) {
+            System.out.println("========================= browser: " + System.getProperty("browser") + " ====================");
+            System.out.println("========================= environment: " + System.getProperty("environment") + " ====================");
+            System.out.println("========================= surefire.suiteXmlFiles: " + System.getProperty("surefire.suiteXmlFiles") + " ====================");
 
             switch (System.getProperty("browser")) {
-                case "firefox":{
+                case "firefox": {
+                    System.out.println("========== firefox ==============");
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     break;
-                } case "chrome":{
+                }
+                case "chrome": {
+                    System.out.println("========== chrome ==============");
+
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     break;
-                } case "edge":{
+                }
+                case "edge": {
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
-                } default: {
+                }
+                default: {
+                    System.out.println("========== default ==============");
+
                     System.setProperty("webdriver.chrome.driver", "src/test/resources/yandexdriver");
                     driver = new ChromeDriver();
                     break;
@@ -38,7 +50,8 @@ public class DriverSingleton {
         }
         return driver;
     }
-    public static void closeDriver(){
+
+    public static void closeDriver() {
         driver.quit();
         driver = null;
     }

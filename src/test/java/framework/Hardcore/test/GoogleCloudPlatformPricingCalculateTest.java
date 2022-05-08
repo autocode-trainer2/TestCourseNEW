@@ -16,6 +16,20 @@ public class GoogleCloudPlatformPricingCalculateTest extends CommonConditions {
     private String calculatorTab;
     private String yopmailTab;
 
+
+    @Test(description = "Price comparison test")
+    public void pricingCalculate() {
+        testVirtualMachine = VirtualMachineCreator.withCredentialsFromProperties();
+        String calculatorResult = getCalculatorResult();
+        calculatorTab = driver.getWindowHandle();
+        driver.switchTo().newWindow(WindowType.TAB);
+        yopmailTab = driver.getWindowHandle();
+        email = new Email(new YopmailHomePage(driver)
+                .openPage()
+                .generateTemporaryEmail());
+        Assert.assertEquals(getEmailResult(), calculatorResult, "Total Cost results are different");
+    }
+
     private String getCalculatorResult() {
         return new GoogleCloudHomePage(driver)
                 .openPage()
@@ -33,25 +47,6 @@ public class GoogleCloudPlatformPricingCalculateTest extends CommonConditions {
                 .sendEmailClick()
                 .checkInbox(driver.switchTo().window(yopmailTab))
                 .getEstimatedCostsFromEmail();
-    }
-
-    @Test(description = "Price comparison test")
-    public void pricingCalculate() {
-        testVirtualMachine = VirtualMachineCreator.withCredentialsFromProperties();
-        String calculatorResult = getCalculatorResult();
-
-        calculatorTab = driver.getWindowHandle();
-        driver.switchTo().newWindow(WindowType.TAB);
-        yopmailTab = driver.getWindowHandle();
-
-        email = new Email(new YopmailHomePage(driver)
-                .openPage()
-                .generateTemporaryEmail());
-
-        String emailResult = getEmailResult();
-
-        Assert.assertEquals(emailResult, calculatorResult, "Total Cost results are different");
-
     }
 
 }

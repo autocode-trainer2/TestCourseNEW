@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-06T07:12:48 UZT" name="Hardcore" finished-at="2022-05-06T07:13:40 UZT" duration-ms="51783">
+  <suite started-at="2022-05-08T13:40:28 UZT" name="Hardcore" finished-at="2022-05-08T13:41:54 UZT" duration-ms="85948">
     <groups>
     </groups>
-    <test started-at="2022-05-06T07:12:48 UZT" name="Hardcore" finished-at="2022-05-06T07:13:40 UZT" duration-ms="51783">
+    <test started-at="2022-05-08T13:40:28 UZT" name="Hardcore" finished-at="2022-05-08T13:41:54 UZT" duration-ms="85948">
       <class name="framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest@11c20519]" started-at="2022-05-06T07:12:48 UZT" name="setUp" finished-at="2022-05-06T07:12:49 UZT" duration-ms="987" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest@78047b92]" started-at="2022-05-08T13:40:28 UZT" name="setUp" finished-at="2022-05-08T13:40:29 UZT" duration-ms="1213" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="pricingCalculate()[pri:0, instance:framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest@11c20519]" started-at="2022-05-06T07:12:49 UZT" name="pricingCalculate" description="Price comparison test" finished-at="2022-05-06T07:13:40 UZT" duration-ms="50682" status="PASS">
+        <test-method signature="pricingCalculate()[pri:0, instance:framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest@78047b92]" started-at="2022-05-08T13:40:29 UZT" name="pricingCalculate" description="Price comparison test" finished-at="2022-05-08T13:41:53 UZT" duration-ms="84604" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pricingCalculate -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest@11c20519]" started-at="2022-05-06T07:13:40 UZT" name="closeBrowser" finished-at="2022-05-06T07:13:40 UZT" duration-ms="103" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest@78047b92]" started-at="2022-05-08T13:41:53 UZT" name="closeBrowser" finished-at="2022-05-08T13:41:54 UZT" duration-ms="104" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
