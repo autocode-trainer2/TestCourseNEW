@@ -2,6 +2,7 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2022-05-08T13:40:28 UZT" name="Hardcore" finished-at="2022-05-08T13:41:54 UZT" duration-ms="85948">
     <groups>
     </groups>
@@ -16,6 +17,22 @@
           </reporter-output>
         </test-method> <!-- pricingCalculate -->
         <test-method is-config="true" signature="closeBrowser()[pri:0, instance:framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest@78047b92]" started-at="2022-05-08T13:41:53 UZT" name="closeBrowser" finished-at="2022-05-08T13:41:54 UZT" duration-ms="104" status="PASS">
+=======
+  <suite started-at="2022-04-27T14:13:30 UZT" name="Hardcore" finished-at="2022-04-27T14:15:34 UZT" duration-ms="124182">
+    <groups>
+    </groups>
+    <test started-at="2022-04-27T14:13:30 UZT" name="Hardcore" finished-at="2022-04-27T14:15:34 UZT" duration-ms="124182">
+      <class name="framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest@11c20519]" started-at="2022-04-27T14:13:30 UZT" name="setUp" finished-at="2022-04-27T14:13:31 UZT" duration-ms="1092" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="GoogleCloudPlatformPricingCalculatorTest()[pri:0, instance:framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest@11c20519]" started-at="2022-04-27T14:13:31 UZT" name="GoogleCloudPlatformPricingCalculatorTest" finished-at="2022-04-27T14:15:34 UZT" duration-ms="122974" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GoogleCloudPlatformPricingCalculatorTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest@11c20519]" started-at="2022-04-27T14:15:34 UZT" name="closeBrowser" finished-at="2022-04-27T14:15:34 UZT" duration-ms="102" status="PASS">
+>>>>>>> 21cff8eec9bdfc1d66ce412c38faf70b7f8715b0
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

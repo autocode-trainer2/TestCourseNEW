@@ -1,18 +1,14 @@
 # ta_training-java
 
-#framework(test)
-task description: Задача - построить фреймворк для автоматизации Hardcore задания из курса WebDriver.
+# framework (Hardcore)
+type command to run test:\
+mvn -Dbrowser=chrome -Denvironment=qa -Dsurefire.suiteXmlFiles=/src/test/resources/testng-smoke.xml clean test
 
-Что должно быть в итоговом фреймворке:
+PARAMETRIES
 
-webdrivermanager для управления коннекторам к браузерам 
-Page Object / Page Factory для абстракций страниц 
-Модель для бизнес-объектов необходимых сущностей properties файлы с тестовыми данным для разных окружений (как минимум 2) xml suites для smoke тестов и всех тестов 
-При падении теста должен быть сделан скриншот с датой и временем 
-Фреймворк должен иметь возможность запуска с Jenkins и параметризацией браузера, тест suite, environment. 
-Результаты тестов должны быть на графике джобы, скриншоты должны быть заархивированны как артефакты
+Dbrowser:  chrome | yandex | edge
 
-notes to "framework" task-> parameters to start mvn project: -Dbrowser={param1} -Denvironmnet={param2} -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml
+Denvironment: qa | dev
 
 param1: chrome | firefox | edge | yandex
 param2: qa | dev

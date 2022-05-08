@@ -41,6 +41,7 @@ public class DriverSingleton {
                     System.out.println("========== default ==============");
 
                     System.setProperty("webdriver.chrome.driver", "src/test/resources/yandexdriver");
+
                     driver = new ChromeDriver();
                     break;
                 }
