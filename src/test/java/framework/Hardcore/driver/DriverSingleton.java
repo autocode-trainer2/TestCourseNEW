@@ -33,15 +33,15 @@ public class DriverSingleton {
                     break;
                 }
                 case "edge": {
+                    System.out.println("========== edge ==============");
+
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
                 }
                 default: {
                     System.out.println("========== default ==============");
-
-                    System.setProperty("webdriver.chrome.driver", "src/test/resources/yandexdriver");
-
+                    System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\yandexdriver.exe");
                     driver = new ChromeDriver();
                     break;
                 }

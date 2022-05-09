@@ -1,9 +1,5 @@
 $(document).ready(function() {
-<<<<<<< HEAD
     $('a.navigator-link').on("click", function() {
-=======
-    $('a.navigator-link').click(function() {
->>>>>>> 21cff8eec9bdfc1d66ce412c38faf70b7f8715b0
         // Extract the panel for this link
         var panel = getPanelName($(this));
 
@@ -18,11 +14,7 @@ $(document).ready(function() {
     installMethodHandlers('skipped');
     installMethodHandlers('passed', true); // hide passed methods by default
 
-<<<<<<< HEAD
     $('a.method').on("click", function() {
-=======
-    $('a.method').click(function() {
->>>>>>> 21cff8eec9bdfc1d66ce412c38faf70b7f8715b0
         showMethod($(this));
         return false;
     });
@@ -30,17 +22,10 @@ $(document).ready(function() {
     // Hide all the panels and display the first one (do this last
     // to make sure the click() will invoke the listeners)
     $('.panel').hide();
-<<<<<<< HEAD
     $('.navigator-link').first().trigger("click");
 
     // Collapse/expand the suites
     $('a.collapse-all-link').on("click", function() {
-=======
-    $('.navigator-link').first().click();
-
-    // Collapse/expand the suites
-    $('a.collapse-all-link').click(function() {
->>>>>>> 21cff8eec9bdfc1d66ce412c38faf70b7f8715b0
         var contents = $('.navigator-suite-content');
         if (contents.css('display') == 'none') {
             contents.show();
@@ -71,11 +56,7 @@ function installMethodHandlers(name, hide) {
         return $(sel);
     }
 
-<<<<<<< HEAD
     $('a.hide-methods.' + name).on("click", function() {
-=======
-    $('a.hide-methods.' + name).click(function() {
->>>>>>> 21cff8eec9bdfc1d66ce412c38faf70b7f8715b0
         var w = getContent($(this));
         w.hide();
         getHideLink($(this), name).hide();
@@ -83,11 +64,7 @@ function installMethodHandlers(name, hide) {
     getMethodPanelClassSel($(this), name).hide();
     });
 
-<<<<<<< HEAD
     $('a.show-methods.' + name).on("click", function() {
-=======
-    $('a.show-methods.' + name).click(function() {
->>>>>>> 21cff8eec9bdfc1d66ce412c38faf70b7f8715b0
         var w = getContent($(this));
         w.show();
         getHideLink($(this), name).show();
@@ -97,15 +74,9 @@ function installMethodHandlers(name, hide) {
     });
 
     if (hide) {
-<<<<<<< HEAD
         $('a.hide-methods.' + name).trigger("click");
     } else {
         $('a.show-methods.' + name).trigger("click");
-=======
-        $('a.hide-methods.' + name).click();
-    } else {
-        $('a.show-methods.' + name).click();
->>>>>>> 21cff8eec9bdfc1d66ce412c38faf70b7f8715b0
     }
 }
 
