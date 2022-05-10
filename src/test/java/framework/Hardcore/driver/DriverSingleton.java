@@ -29,21 +29,12 @@ public class DriverSingleton {
                 }
                 case "chrome": {
                     System.out.println("========== chrome ==============");
-
                     WebDriverManager.chromedriver().setup();
-                    ChromeOptions option = new ChromeOptions();
-                    option.addArguments("--disable-dev-shm-usage");
-                    option.addArguments("--no-sandbox");
-                    option.addArguments("--headless");
-//                    DesiredCapabilities chrome = DesiredCapabilities.chrome();
-//                    chrome.setJavascriptEnabled(true);
-                    option.setCapability(ChromeOptions.CAPABILITY, option);
-                    driver = new ChromeDriver(option);
+                    driver = new ChromeDriver();
                     break;
                 }
                 case "edge": {
                     System.out.println("========== edge ==============");
-
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
