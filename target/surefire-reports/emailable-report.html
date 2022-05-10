@@ -9,10 +9,24 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Hardcore</th></tr>
-<tr><td><a href="#t0">Hardcore</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">75 722</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Hardcore</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">52 293</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Hardcore</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Hardcore &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest</td><td><a href="#m0">pricingCalculate</a></td><td rowspan="1">1652073338581</td><td rowspan="1">72802</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Hardcore</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Hardcore &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest</td><td><a href="#m0">pricingCalculate</a></td><td rowspan="1">1652076676612</td><td rowspan="1">48078</td></tr></tbody>
 </table>
-<h2>Hardcore</h2><h3 id="m0">framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest#pricingCalculate</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Hardcore</h2><h3 id="m0">framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest#pricingCalculate</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[[[FirefoxDriver: firefox on WINDOWS (afe8d709-eb37-47fa-9942-cc578a5ba2b8)] -&gt; xpath: //*[@placeholder=&apos;Series&apos;]]] -&gt; xpath: .//md-option[contains(., &apos;N1&apos;)]] (tried for 1 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
+System info: host: &apos;MY-HP&apos;, ip: &apos;192.168.1.105&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.15&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 99.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220411174855, moz:debuggerAddress: localhost:52478, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 6200, moz:profile: C:\WINDOWS\SystemTemp\rust_..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:52478/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: afe8d709-eb37-47fa-9942-cc578a5ba2b8
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at framework.Hardcore.page.PricingCalculatorPage.selectOption(PricingCalculatorPage.java:87)
+	at framework.Hardcore.page.PricingCalculatorPage.setSeries(PricingCalculatorPage.java:108)
+	at framework.Hardcore.page.PricingCalculatorPage.fillVirtualMachineData(PricingCalculatorPage.java:67)
+	at framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest.getCalculatorResult(GoogleCloudPlatformPricingCalculateTest.java:38)
+	at framework.Hardcore.test.GoogleCloudPlatformPricingCalculateTest.pricingCalculate(GoogleCloudPlatformPricingCalculateTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

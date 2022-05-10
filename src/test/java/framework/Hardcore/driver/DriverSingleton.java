@@ -3,8 +3,10 @@ package framework.Hardcore.driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class DriverSingleton {
     private static WebDriver driver;
@@ -29,7 +31,14 @@ public class DriverSingleton {
                     System.out.println("========== chrome ==============");
 
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    ChromeOptions option = new ChromeOptions();
+                    option.addArguments("--disable-dev-shm-usage");
+                    option.addArguments("--no-sandbox");
+                    option.addArguments("--headless");
+//                    DesiredCapabilities chrome = DesiredCapabilities.chrome();
+//                    chrome.setJavascriptEnabled(true);
+                    option.setCapability(ChromeOptions.CAPABILITY, option);
+                    driver = new ChromeDriver(option);
                     break;
                 }
                 case "edge": {
